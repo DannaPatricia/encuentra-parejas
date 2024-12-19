@@ -30,34 +30,16 @@
    git clone https://github.com/DannaPatricia/encuentra-parejas.git
 2. **Navegar al directorio del proyecto:
    ```bash
-    cd encuentra-parejas
+    cd calculadora
 3. **Abrir el archivo index.html en tu navegador:
     ```bash
     open index.html
 
 ---
 
-## 🧩 Estructura del Proyecto
-
-- **index.html**: Archivo principal que contiene la estructura HTML del juego.. 
-- **Parejas.css**: Archivo de estilos que da diseño al tablero y las cartas. 
-- **Parejas.js**:  Archivo JavaScript que implementa la lógica del juego (manejo de clics, comparación de cartas, reinicio del juego).Archivo JavaScript que implementa la lógica del juego.  
-
----
-
 ## 🎨 Capturas de Pantalla
 
 (Pendiente)
-
----
-
-
-## 🔧 Próximas Mejoras
-
-- Añadir un sistema de reinicio automático sin recargar la página.
-- Implementar un modo de juego contra la máquina (IA).
-- Mejorar la detección de empates.
-- Crear una interfaz más personalizada y atractiva.
 
 ---
 
