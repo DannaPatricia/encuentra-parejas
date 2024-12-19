@@ -4,6 +4,12 @@
 
 ---
 
+## 📝 NOTA!!
+
+**Pendiente de mejora de código. Código realizado a mediados del 2024
+
+---
+
 ### ✨ Descripción del Proyecto
 
 **Encuentra Parejas** es un juego de cartas donde el jugador debe voltear dos cartas al mismo tiempo para buscar pares idénticos. Si las cartas coinciden, permanecen volteadas, de lo contrario, se ocultan nuevamente. El objetivo es encontrar todas las parejas lo más rápido posible.
