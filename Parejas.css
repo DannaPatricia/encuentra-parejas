@@ -1,0 +1,39 @@
+* {
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(47, 60, 102);
+}
+
+#contenedor {
+    background-color: rgb(68, 88, 155);
+    margin-top: 7%;
+    height: 85%;
+    width: 60%;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.cartas {
+    background-color: rgb(91, 128, 193);
+    background-position: center;
+	background-size: contain;
+    width: 87%;
+    height: 87%;
+    border-radius: 15px;
+}
+
+.cartas:hover {
+    background-color: rgb(120, 148, 196);
+    cursor: pointer;
+    transform: scale(0.9, 0.9);
+    transition: 0.7s;
+}
