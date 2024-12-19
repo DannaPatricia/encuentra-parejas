@@ -30,7 +30,7 @@
    git clone https://github.com/DannaPatricia/encuentra-parejas.git
 2. **Navegar al directorio del proyecto:
    ```bash
-    cd calculadora
+    cd encuentra-parejas
 3. **Abrir el archivo index.html en tu navegador:
     ```bash
     open index.html
