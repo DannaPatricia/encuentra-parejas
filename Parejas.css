@@ -9,31 +9,41 @@
 body {
     height: 100vh;
     width: 100vw;
-    background-color: rgb(47, 60, 102);
+    background-color: white;
+}
+
+#tituloContainer {
+    margin-top: 1em;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bolder;
+    color: #27023a;
+    text-shadow: 5px 3px 5px rgb(206, 205, 205);
 }
 
 #contenedor {
-    background-color: rgb(68, 88, 155);
-    margin-top: 7%;
-    height: 85%;
-    width: 60%;
+    margin-top: 2em;
+    background-color: rgb(93, 34, 93);
+    height: 70%;
+    width: 52%;
     border-radius: 20px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
 
 .cartas {
-    background-color: rgb(91, 128, 193);
+    background-color: rgb(137, 61, 137);
     background-position: center;
 	background-size: contain;
     width: 87%;
     height: 87%;
     border-radius: 15px;
+    transform: scale(1, 1);
+    transition: transform 0.7s, background-color 0.7s;
 }
 
 .cartas:hover {
-    background-color: rgb(120, 148, 196);
+    background-color: rgb(162, 93, 162);
     cursor: pointer;
     transform: scale(0.9, 0.9);
-    transition: 0.7s;
 }

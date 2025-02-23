@@ -10,47 +10,47 @@ window.onload = function () {
 function iniciarJuego() {
     crearCartas();
     prepararCartas();
-    darCarta();
+    mostrarCarta();
 }
 
 function crearCartas() {
-    for (var i = 0; i < tableroCartas.length; i++) {
+    for (let i = 0; i < tableroCartas.length; i++) {
         tableroCartas[i] = new Array(6);
     }
     const contenedorCartas = document.getElementById("contenedor");
-    var contador = 0;
-    for (var i = 0; i < tableroCartas.length; i++) {
-        for (var j = 0; j < tableroCartas[0].length; j++) {
-            var cartaNueva = document.createElement("div");
+    let contador = 0;
+    for (const element of tableroCartas) {
+        for (let j = 0; j < tableroCartas[0].length; j++) {
+            let cartaNueva = document.createElement("div");
             cartaNueva.setAttribute("class", "cartas");
             cartaNueva.setAttribute("id", contador);
-            tableroCartas[i][j] = cartaNueva;
+            element[j] = cartaNueva;
             contenedorCartas.appendChild(cartaNueva);
             contador++;
         }
     }
-    for (var i = 0; i < imagenesCartas.length; i++) {
-        imagenesCartas[i] = "url('../imagenes/" + (i + 1) + ".png')";
+    for (let i = 0; i < imagenesCartas.length; i++) {
+        imagenesCartas[i] = "url('imagenes/" + (i + 1) + ".png')";
     }
 }
 
 function prepararCartas() {
-    for (var i = 0; i < tableroCartas.length; i++) {
-        for (var j = 0; j < tableroCartas[0].length; j++) {
+    for (const element of tableroCartas) {
+        for (let j = 0; j < tableroCartas[0].length; j++) {
             do {
                 var nAleatorio = Math.floor(Math.random() * 12);
             } while (!compruebaRepetida(imagenesCartas[nAleatorio]));
-            tableroCartas[i][j].dataset.id = imagenesCartas[nAleatorio];
-            tableroCartas[i][j].dataset.dado = "false";
+            element[j].dataset.id = imagenesCartas[nAleatorio];
+            element[j].dataset.dado = "false";
         }
     }
 }
 
 function compruebaRepetida(imagenCarta) {
-    var contador = 0;
-    for (var i = 0; i < tableroCartas.length; i++) {
-        for (var j = 0; j < tableroCartas[0].length; j++) {
-            if (tableroCartas[i][j].dataset.id === imagenCarta) {
+    let contador = 0;
+    for (const element of tableroCartas) {
+        for (let j = 0; j < tableroCartas[0].length; j++) {
+            if (element[j].dataset.id === imagenCarta) {
                 contador++;
             }
             if (contador === 2) {
@@ -61,7 +61,7 @@ function compruebaRepetida(imagenCarta) {
     return true;
 }
 
-function darCarta() {
+function mostrarCarta() {
     let imagenCarta = "";
     const cartas = document.querySelectorAll(".cartas");
     cartas.forEach(carta => {
@@ -96,7 +96,6 @@ function compruebaPareja() {
             ocultarCarta(carta1, carta2);
         }
         turnos = 0;
-        arrayCartas2 = new Array(2);
     }
 }
 
@@ -109,41 +108,31 @@ function ocultarCarta(carta1, carta2) {
         setTimeout(() => {
             carta1.style.backgroundImage = "none";
             carta2.style.backgroundImage = "none";
-            carta1.style.backgroundColor = " rgb(91, 128, 193)";
-            carta2.style.backgroundColor = " rgb(91, 128, 193)";
+            carta1.style.backgroundColor = "  rgb(137, 61, 137)";
+            carta2.style.backgroundColor = " rgb(137, 61, 137)";
             carta1.style.opacity = "1";
             carta2.style.opacity = "1";
         }, 300);
     }, 1000);
+    carta1.classList.add("cartas");
+    carta2.classList.add("cartas");
 }
 
 function reiniciarJuego() {
     let cartasContadas = 0;
     let totalCartas = tableroCartas.length * tableroCartas[0].length;
-    for (var i = 0; i < tableroCartas.length; i++) {
-        for (var j = 0; j < tableroCartas[0].length; j++) {
-            let carta = tableroCartas[i][j];
+    for (const element of tableroCartas) {
+        for (let j = 0; j < tableroCartas[0].length; j++) {
+            let carta = element[j];
             if (carta.dataset.dado === "true") {
                 cartasContadas++;
             }
             if (cartasContadas == totalCartas) {
-                girarCartas();
                 tableroCartas = new Array(4);
                 iniciarJuego();
             }
         }
     }
 }
-
-function girarCartas() {
-    for (var i = 0; i < tableroCartas.length; i++) {
-        for (var j = 0; j < tableroCartas[0].length; j++) {
-            tableroCartas[i][j].style.backgroundImage = "none";
-            tableroCartas[i][j].style.backgroundColor = " rgb(91, 128, 193)";
-        }
-    }
-
-}
-
 
 
